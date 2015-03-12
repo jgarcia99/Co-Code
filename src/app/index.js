@@ -7,7 +7,7 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             .state('login', {
                 url: '/login',
                 templateUrl: 'app/login/login.html',
-                controller: 'MainCtrl'
+                controller: 'LoginCtrl'
             })
 
         .state('choose', {

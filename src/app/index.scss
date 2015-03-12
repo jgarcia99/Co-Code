@@ -31,12 +31,7 @@ input.login {
     border-radius: 3px;
     border-left: solid 40px #444;
 }
-.bottom-foot {
-    color: black;
-    position: absolute;
-    bottom: .8em;
-    @include font;
-}
+
 
 button.submit{
   display: block;
@@ -70,12 +65,9 @@ button.submit{
   padding: 1.2em;
 }
 
-.bottom-foot-line {
-  border-top: 3px solid white;
-  margin-top: 7em;
-}
 
-.choose-stuff {
+
+.choose-reason,.choose-title {
   @include font;
   color: #F8717E;
 
