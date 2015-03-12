@@ -74,5 +74,11 @@ button.submit{
   border-top: 3px solid white;
   margin-top: 7em;
 }
+
+.choose-stuff {
+  @include font;
+  color: #F8717E;
+
+}
 // injector
 // endinjector

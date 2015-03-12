@@ -1,14 +1,19 @@
 'use strict';
 
 angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase'])
-  .config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
-      });
+    .config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
-  })
-;
+        $stateProvider
+            .state('login', {
+                url: '/login',
+                templateUrl: 'app/login/login.html',
+                controller: 'MainCtrl'
+            })
+
+        .state('choose', {
+            url: '/choose',
+            templateUrl: 'app/choose/choose.html',
+            controller: 'ChooseCtrl'
+        });
+        $urlRouterProvider.otherwise('/');
+    });
