@@ -1,0 +1,51 @@
+// .browsehappy {
+//   margin: 0.2em 0;
+//   background: #ccc;
+//   color: #000;
+//   padding: 0.2em 0;
+// }
+
+// .thumbnail {
+//   height: 200px;
+
+//   img.pull-right {
+//     width: 50px;
+//   }
+// }
+
+
+
+html {
+  background:  url('http://media.giphy.com/media/qxKCjhcZbWgRG/giphy.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.main-log {
+  border: 3px solid red;
+}
+
+header {
+  color: green;
+  padding-top: 1.5em;
+  padding-bottom: 3em;
+  }
+
+#bottom-cup {
+  font-size: 1em;
+  font-family: 'Press Start 2P', cursive;
+
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.log-in, .sign-up {
+  margin-top: 1.5em;
+  background-color: black;
+  color: white;
+}
+
+
+// injector
+// endinjector
