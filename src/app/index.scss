@@ -2,20 +2,21 @@
     font-family: 'Montserrat', serif;
 }
 $button: #8CBEB2;
+$headlines: #01B6AD;
 body {
     background: url('http://media.giphy.com/media/qxKCjhcZbWgRG/giphy.gif') no-repeat center center fixed;
     background-size: cover;
 }
 header {
-    color: #01B6AD;
+    color: $headlines;
     padding-top: 1.5em;
     padding-bottom: 3em;
 }
 #bottom-cup {
     font-size: 1em;
-    font-family: 'Press Start 2P', cursive;
+    @include font;
 }
-h1 {
+h1,h2 {
     font-family: 'Press Start 2P', cursive;
 }
 input.login {
@@ -69,7 +70,10 @@ button.submit{
 
 .choose-reason,.choose-title {
   @include font;
-  color: #F8717E;
+  h2 {
+    color: #F8717E;
+  }
+
 
 }
 // injector

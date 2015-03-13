@@ -9,6 +9,7 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
                 templateUrl: 'app/login/login.html',
                 controller: 'LoginCtrl',
                 controllerAs: 'login'
+
             })
 
         .state('choose', {
@@ -18,3 +19,7 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
         });
         $urlRouterProvider.otherwise('/login');
     })
+
+
+
+
