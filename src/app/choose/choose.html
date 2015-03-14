@@ -1,6 +1,6 @@
 <div class="container">
-    <main class="choose-reason">
-        <h2>Hey dev are you going to the cafe to:</h2>
+    <main class="choose-reason" ng-controller="LoginCtrl as login">
+        <h2>Hey {{login.uid.name}} are you going to the cafe to:</h2>
         <form action="">
             <input type="radio" value="Code (you got your Mac)">Code (you got your Mac)
             <br>
