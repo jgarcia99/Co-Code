@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase'])
+angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase','uiGmapgoogle-maps'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
@@ -16,7 +16,14 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             url: '/choose',
             templateUrl: 'app/choose/choose.html',
             controller: 'ChooseCtrl'
-        });
+        })
+
+        .state('map', {
+          url:'/map',
+          templateUrl: 'app/maps/maps.html',
+          controller: 'MapsCtrl'
+        })
+        ;
         $urlRouterProvider.otherwise('/login');
     })
 

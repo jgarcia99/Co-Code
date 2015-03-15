@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -66,17 +67,18 @@
         ga('create', 'UA-XXXXX-X');
         ga('send', 'pageview');
         </script>
-
+       <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
         <!-- build:js(src) scripts/vendor.js -->
         <!-- bower:js -->
         <!-- run `gulp wiredep` to automaticaly populate bower script dependencies -->
         <!-- endbower -->
         <!-- endbuild -->
-        <script src="maps.googleapis/maps/api/js?sensor=false"></script>
+
 
         <script src="app/index.js"></script>
         <script src="app/login/login.controller.js"></script>
         <script src="app/choose/choose.controller.js"></script>
+         <script src="app/maps/maps.controller.js"></script>
 
         <!-- inject:partials -->
         <!-- angular templates will be automatically converted in js and inserted here -->
