@@ -94,7 +94,7 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
         if (authdUser === null) {
             return null;
         }
-        console.log("This will break if you login with anything other than FB")
+        console.log("This will break if you login with anything other than github or twitter")
 
     }
 });
