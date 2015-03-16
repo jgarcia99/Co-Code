@@ -1,3 +1,14 @@
+.angular-google-map-container {
+    height: 300px;
+
+    filter: alpha(opacity=40);
+    background: transparent no-repeat 0 0;
+    opacity: 0.6;
+
+
+
+}
+
 @mixin font {
     font-family: 'Montserrat', serif;
 }
@@ -16,7 +27,7 @@ header {
     font-size: 1em;
     @include font;
 }
-h1,h2 {
+h1, h2 {
     font-family: 'Press Start 2P', cursive;
 }
 input.login {
@@ -32,49 +43,40 @@ input.login {
     border-radius: 3px;
     border-left: solid 40px #444;
 }
-
-
-button.submit{
-  display: block;
-  background-color: darken($button,10%);
-  margin: 45px auto;
-  width: 230px;
-  height: 70px;
-  border: none;
-  border-radius: 3px;
-  color: #fff;
-  font-size: 2.5em;
-  text-shadow: 0px 0px 1px #ddd;
-  border-top: solid 7px darken($button,20%);
-  cursor: pointer;
-  &:hover {
-  border-top: solid 7px darken($button,30%);
-  background-color: darken($button, 20%);
-  }
-  &:focus {
-    outline:none;
-  }
+button.submit {
+    display: block;
+    background-color: darken($button, 10%);
+    margin: 45px auto;
+    width: 230px;
+    height: 70px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 2.5em;
+    text-shadow: 0px 0px 1px #ddd;
+    border-top: solid 7px darken($button, 20%);
+    cursor: pointer;
+    &:hover {
+        border-top: solid 7px darken($button, 30%);
+        background-color: darken($button, 20%);
+    }
+    &:focus {
+        outline: none;
+    }
 }
-
 .twitter {
-  color: cornflowerblue;
-  padding: 1.2em;
+    color: cornflowerblue;
+    padding: 1.2em;
 }
-
 .github {
-  color: black;
-  padding: 1.2em;
+    color: black;
+    padding: 1.2em;
 }
-
-
-
-.choose-reason,.choose-title {
-  @include font;
-  h2 {
-    color: #F8717E;
-  }
-
-
+.choose-reason, .choose-title {
+    @include font;
+    h2 {
+        color: #F8717E;
+    }
 }
 // injector
 // endinjector

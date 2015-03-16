@@ -1,7 +1,12 @@
 'use strict';
 
-angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase'])
-    .config(function($stateProvider, $urlRouterProvider) {
+angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase', 'uiGmapgoogle-maps'])
+    .config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
+        uiGmapGoogleMapApiProvider.configure({
+            key: 'AIzaSyBzWNQv7IOgloZ8Zq9vbifewV9SZtY2Xa8',
+            v: '3.17',
+            libraries: 'weather,geometry,visualization'
+        });
 
         $stateProvider
             .state('login', {
@@ -16,11 +21,17 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             url: '/choose',
             templateUrl: 'app/choose/choose.html',
             controller: 'ChooseCtrl'
+        })
+
+        .state('map', {
+            url: '/map',
+            templateUrl: 'app/maps/maps.html',
+            controller: 'MapsCtrl'
         });
         $urlRouterProvider.otherwise('/login');
     })
 
-.factory('Auth', function($firebaseObject,$state) {
+.factory('Auth', function($firebaseObject, $state) {
     var auth = new Firebase('https://co-code.firebaseio.com');
     var currentUser = {};
 
@@ -60,7 +71,7 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
                 if (error) {
                     console.log("Login Failed!", error);
                 } else {
-                  $state.go('choose');
+                    $state.go('choose');
                     console.log("Authenticated successfully with payload:", authData);
                 }
             }, {
@@ -98,5 +109,3 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
 
     }
 });
-
-
