@@ -3,10 +3,18 @@ stardust 28.568422,-81.346529
 downtown credo 28.571854,-81.389863
 monkey 28.549242,-81.352306
 vespyr 28.555688,-81.207649 -->
-<div class="container">
+<div class="container text-center">
   <h2>Top 5 coffee shops in Orlando</h2>
 
     <ui-gmap-google-map center="map.center" zoom="map.zoom">
+
+      <ui-gmap-marker coords="marker.coords" idkey="marker.id"></ui-gmap-marker>
+
+        <ui-gmap-markers data-ng-repeat="marker in markerList" coords="marker">
+          <ui-gmap-window isIconVisibleOnClick="true">
+            {{marker.message}}
+          </ui-gmap-window>
+        </ui-gmap-markers>
 
     </ui-gmap-google-map>
 
