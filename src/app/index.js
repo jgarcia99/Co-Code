@@ -27,7 +27,15 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             url: '/map',
             templateUrl: 'app/maps/maps.html',
             controller: 'MapsCtrl'
-        });
+        })
+
+        .state('chat', {
+            url: '/chat',
+            templateUrl: 'app/chat/chat.html',
+            controller: 'ChatCtrl'
+        })
+
+        ;
         $urlRouterProvider.otherwise('/login');
     })
 
