@@ -17,37 +17,7 @@ angular.module('coCode')
             coords: {
                 latitude: 28,
                 longitude: -81
-            },
-
-            id: 1,
-            coords: {
-              latitude: 28.593178,
-            longitude: -81.361418,
-          },
-
-          id: 2,
-            coords: {
-              latitude: 28.593178,
-            longitude: -81.361418,
-          },
-
-          id: 3,
-            coords: {
-              latitude: 28.593178,
-            longitude: -81.361418,
-          },
-
-          id: 4,
-            coords: {
-              latitude: 28.593178,
-            longitude: -81.361418,
-          },
-
-          id: 5,
-            coords: {
-              latitude: 28.593178,
-            longitude: -81.361418,
-          },
+            }
         }
 
         $scope.markerList = [{
