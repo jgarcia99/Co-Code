@@ -1,0 +1,26 @@
+<div class="container">
+  <h4>Chat History {{messages.length}}</h4>
+<ul>
+  <li ng-repeat="user in users">{{user}}</li>
+</ul>
+
+<form ng-submit="publish()">
+  <input type="text" ng-model="newMessage">
+  <input type="submit" value="Send">
+</form>
+
+<div class="well">
+  <ul>
+    <li ng-repeat="message in messages">
+
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+</div>
