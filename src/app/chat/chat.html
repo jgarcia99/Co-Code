@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="ChatCtrl">
   <h4>Chat History {{messages.length}}</h4>
 <ul>
   <li ng-repeat="user in users">{{user}}</li>
@@ -12,7 +12,7 @@
 <div class="well">
   <ul>
     <li ng-repeat="message in messages">
-
+      {{message}}
     </li>
   </ul>
 </div>
