@@ -2,7 +2,7 @@
 
 angular.module('coCode')
 
-.controller('LoginCtrl', function($firebaseArray, $firebaseObject, Auth) {
+.controller('LoginCtrl','Auth', function($firebaseArray, $firebaseObject, Auth) {
     var self = this;
     var userInfo = new Firebase('https://co-code.firebaseio.com/users');
 
@@ -25,21 +25,6 @@ angular.module('coCode')
         }
     });
 
-    // this.newUser = {
-    //     name: '',
-    //     email: '',
-    //     age: ''
 
-    // };
-
-    // this.addUser = function(user) {
-    //     this.obj.$add(user);
-    //     return this.newUser = {
-    //         name: '',
-    //         email: '',
-    //         age: ''
-
-    //     };
-    // }
 
 });

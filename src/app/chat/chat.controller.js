@@ -1,7 +1,7 @@
 angular.module('coCode')
-    .controller('ChatCtrl', function($rootScope, $scope, $location, PubNub) {
+    .controller('ChatCtrl','Auth' function($rootScope, $scope, $location,Auth, PubNub) {
         // make up a user id (you probably already have this)
-        $scope.userId = "User " + Math.round(Math.random() * 1000);
+        $scope.userId = authdUser;
         // make up a channel name
         $scope.channel = 'Co-code Orlando';
         // pre-populate any existing messages (just an AngularJS scope object)
