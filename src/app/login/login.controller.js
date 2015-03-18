@@ -2,7 +2,7 @@
 
 angular.module('coCode')
 
-.controller('LoginCtrl','Auth', function($firebaseArray, $firebaseObject, Auth) {
+.controller('LoginCtrl', function($firebaseArray, $firebaseObject, Auth) {
     var self = this;
     var userInfo = new Firebase('https://co-code.firebaseio.com/users');
 

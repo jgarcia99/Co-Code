@@ -130,7 +130,8 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
 
             handle: authdUser.github.username,
 
-            photo: authdUser.github.cachedUserProfile.avatar_url
+            photo: authdUser.github.cachedUserProfile.avatar_url,
+
 
         });
 

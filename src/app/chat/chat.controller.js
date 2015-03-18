@@ -1,5 +1,5 @@
 angular.module('coCode')
-    .controller('ChatCtrl','Auth' function($rootScope, $scope, $location,Auth, PubNub) {
+    .controller('ChatCtrl', function($rootScope, $scope, $location,Auth, PubNub) {
         // make up a user id (you probably already have this)
         $scope.userId = authdUser;
         // make up a channel name

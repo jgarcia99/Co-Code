@@ -1,25 +1,26 @@
 <div class="container">
-    <main class="choose-reason" ng-controller="ChooseCtrl as choose">
+    <main class="choose-reason" ng-controller="ChooseCtrl">
         <h2>Hey <span class="handle-name">@{{user.handle}}</span> are you going to the cafe to:</h2>
         <form name="myReason">
-            <input type="radio" ng-model="reason.name" value="Code"> Code
+            <input type="radio" ng-model="reason" value="Code"> Code
             <br/>
-            <input type="radio" ng-model="reason.name" value="Talk"> Talk <br/>
-            <input type="radio" ng-model="reason.name" valie="Both"> Both
+            <input type="radio" ng-model="reason" value="Talk"> Talk <br/>
+            <input type="radio" ng-model="reason" valie="Both"> Both
         </form>
-
+       <h4>{{reason}}</h4>
 
 
 
     <section class="choose-title">
       <h2>I like to talk/code about:</h2>
         <form action="">
-            <input type="radio" ng-model="field.name" value="Front-end">Front-end
+            <input type="radio" ng-model="tech" value="Front-end">Front-end
             <br>
-            <input type="radio" ng-model="field.name" value="Back-end">Back-end<br/>
-            <input type="radio" ng-model="field.name" value="Mobile">Mobile<br/>
-             <input type="radio" ng-model="field.name" value="Web Design">Web Design<br/>
+            <input type="radio" ng-model="tech" value="Back-end">Back-end<br/>
+            <input type="radio" ng-model="tech" value="Mobile">Mobile<br/>
+             <input type="radio" ng-model="tech" value="Web Design">Web Design<br/>
         </form>
+        <h4>{{tech}}</h4>
     </section>
 
     </main>

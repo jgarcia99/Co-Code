@@ -1,7 +1,8 @@
 'use strict'
 
 angular.module('coCode')
-    .controller('ChooseCtrl', '$scope', 'Auth', function($scope, Auth) {
+    .controller('ChooseCtrl', function($scope, Auth) {
+
 
         $scope.user = {};
         Auth.onAuth(function(user) {
@@ -13,18 +14,15 @@ angular.module('coCode')
             }
         })
 
-            $scope.reason = {
-              name: 'Code',
-              name: 'Talk',
-              name: 'Both'
-            };
+            $scope.reason = 'Code';
+            $scope.tech = 'Front-end';
 
             $scope.field = {
-              name: 'Front-end',
-              name: 'Back-end',
-              name: 'Mobile',
-              name: 'Web-Designer'
-            };
+              front: 'Front-end',
+              back: 'Back-end',
+              mobile: 'Mobile',
+              design: 'Web-Designer'
+            }
         // .factory('userReason', function() {
         //         var userReason = {};
         //         if ('Code' === true) {
