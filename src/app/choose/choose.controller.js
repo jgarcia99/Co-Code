@@ -1,7 +1,15 @@
 'use strict'
 
 angular.module('coCode')
-    .controller('ChooseCtrl', function($scope, Auth) {
+    .controller('ChooseCtrl', function($scope, $state, $firebaseObject, Auth) {
+        var userChoice = new Firebase('https://co-code.firebaseio.com/users/choice');
+
+
+
+
+        $scope.obj = $firebaseObject(userChoice);
+
+        $scope.value = true;
 
 
         $scope.user = {};
@@ -14,44 +22,19 @@ angular.module('coCode')
             }
         })
 
-            $scope.reason = 'Code';
-            $scope.tech = 'Front-end';
+        $scope.reason = 'Code';
+        $scope.tech = 'Front-end';
 
-            $scope.field = {
-              front: 'Front-end',
-              back: 'Back-end',
-              mobile: 'Mobile',
-              design: 'Web-Designer'
-            }
-        // .factory('userReason', function() {
-        //         var userReason = {};
-        //         if ('Code' === true) {
-        //             console.log('true')
-        //         } else if ('Talk' === true) {
-        //             console.log('true')
-        //         } else('Both' === true) {
-        //             console.log('true')
-        //         }
-        //     }) // end userReason
+        var made = $scope.reason + $scope.tech;
+        if ($scope.reason && $scope.tech === true) {
+            console.log('choiceMade');
 
-        // return userReason;
+        } else {
+            console.log('make a choice');
+        }
 
 
-        // .factory('userField', function() {
-        //         var userField = {};
-        //         if ('Front-end' === true) {
-        //             console.log('true')
-        //         } else if ('Back-end' === true) {
-        //             console.log('true')
-        //         } else if ('Mobile' === true) {
-        //             console.log('true')
-        //         } else('Web-Designer' === true) {
-        //             console.log('true')
-        //         }
-        //     }) // end userField
-
-        // return userField;
-
+        $scope.made = $firebaseObject(userChoice);
 
 
 

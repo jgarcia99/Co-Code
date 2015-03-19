@@ -79,7 +79,18 @@ button.submit {
     }
 
     span {
-      color: red;
+      color: #cc1075;
+    }
+
+    button {
+      background-color: $button;
+      border-radius: 30%;
+      @include font;
+    }
+
+    h4 {
+      @include font;
+      color: #cc1075;
     }
 }
 

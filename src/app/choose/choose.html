@@ -4,10 +4,10 @@
         <form name="myReason">
             <input type="radio" ng-model="reason" value="Code"> Code
             <br/>
-            <input type="radio" ng-model="reason" value="Talk"> Talk <br/>
-            <input type="radio" ng-model="reason" valie="Both"> Both
+            <input type="radio" ng-model="reason" value="Talk"> Talk (You forgot your MacBook)<br/>
+
         </form>
-       <h4>{{reason}}</h4>
+
 
 
 
@@ -20,7 +20,8 @@
             <input type="radio" ng-model="tech" value="Mobile">Mobile<br/>
              <input type="radio" ng-model="tech" value="Web Design">Web Design<br/>
         </form>
-        <h4>{{tech}}</h4>
+        <h4>So @{{user.handle}} is going to the cafe to {{reason}} about {{tech}} cool.</h4>
+          <button>Next</button>
     </section>
 
     </main>
