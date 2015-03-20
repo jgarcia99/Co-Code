@@ -18,9 +18,10 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             })
 
         .state('choose', {
-            url: '/choose',
+            url: '/choose/:user/:userChoice',
             templateUrl: 'app/choose/choose.html',
-            controller: 'ChooseCtrl'
+            controller: 'ChooseCtrl',
+            controllerAs: 'choose'
         })
 
         .state('map', {

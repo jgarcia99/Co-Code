@@ -1,40 +1,43 @@
 'use strict'
 
 angular.module('coCode')
-    .controller('ChooseCtrl', function($scope, $state, $firebaseObject, Auth) {
-        var userChoice = new Firebase('https://co-code.firebaseio.com/users/choice');
+    .controller('ChooseCtrl', function($state, $firebaseObject,$scope, $firebaseArray, $stateParams, Auth) {
+      var base = new Firebase('https://co-code.firebaseio.com');
+      var userInfo = new Firebase('https://co-code.firebaseio.com/users/userchoice');
 
 
-
-
-        $scope.obj = $firebaseObject(userChoice);
-
-        $scope.value = true;
-
-
-        $scope.user = {};
-        Auth.onAuth(function(user) {
+            Auth.onAuth(function(user) {
             $scope.user = user;
             if (user === null) {
                 console.log('null')
             } else {
                 console.log(user)
+
             }
-        })
+        });
 
-        $scope.reason = 'Code';
-        $scope.tech = 'Front-end';
+        $scope.obj = $firebaseArray(userInfo);
+        console.log($scope.obj)
 
-        var made = $scope.reason + $scope.tech;
-        if ($scope.reason && $scope.tech === true) {
-            console.log('choiceMade');
+        $scope.userArray = {};
 
-        } else {
-            console.log('make a choice');
-        }
+        $scope.userInfo = {
+          reason: "Talk",
+          tech: "Back-end"
+        };
+
+        $scope.addUserInfo = function(userInfo) {
+          $scope.obj.$add(userInfo);
+          return userInfo = {
+            reason: "user.reason",
+            tech: "user.tech"
+          }
+        };
 
 
-        $scope.made = $firebaseObject(userChoice);
+
+
+
 
 
 

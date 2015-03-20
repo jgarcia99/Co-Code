@@ -1,9 +1,20 @@
 angular.module('coCode')
-    .controller('ChatCtrl', function($rootScope, $scope, $location,Auth, PubNub) {
-        // make up a user id (you probably already have this)
-        $scope.userId = authdUser;
+    .controller('ChatCtrl', function($rootScope,$firebaseObject, $firebaseArray,$location,Auth,$scope, PubNub) {
+        // make up a user id (you probably already have $scope)
+          Auth.onAuth(function(user) {
+            $scope.user = user;
+            if (user === null) {
+                console.log('null')
+            } else {
+                console.log(user)
+
+            }
+        });
+
+        $scope.userId = "user " + Math.round(Math.random() * 1000);
         // make up a channel name
-        $scope.channel = 'Co-code Orlando';
+        $scope.channel = 'Front-end';
+
         // pre-populate any existing messages (just an AngularJS scope object)
         $scope.messages = ['Welcome to ' + $scope.channel];
         if (!$rootScope.initialized) {
@@ -47,7 +58,7 @@ angular.module('coCode')
         // Populate message history (optional)
         PubNub.ngHistory({
             channel: $scope.channel,
-            count: 100
+            count: 500
         });
     });
 

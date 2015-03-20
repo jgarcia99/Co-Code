@@ -1,13 +1,11 @@
 <div class="container" ng-controller="ChatCtrl">
-  <h4>Chat History {{user.messages.length}}</h4>
+  <h2 >Co-Code Orlando Chat</h2>
+  <h4>Online Users</h4>
 <ul>
   <li ng-repeat="user in users">{{user}}</li>
 </ul>
 
-<form ng-submit="publish()">
-  <input type="text" ng-model="newMessage">
-  <input type="submit" value="Send">
-</form>
+
 
 <div class="well">
   <ul>
@@ -16,7 +14,10 @@
     </li>
   </ul>
 </div>
-
+<form ng-submit="publish()">
+  <input type="text" ng-model="newMessage" />
+  <input type="submit" value="Send" />
+</form>
 
 
 
