@@ -18,7 +18,7 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             })
 
         .state('choose', {
-            url: '/choose/:user/:userChoice',
+            url: '/choose/',
             templateUrl: 'app/choose/choose.html',
             controller: 'ChooseCtrl',
             controllerAs: 'choose'
@@ -34,6 +34,12 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             url: '/chat',
             templateUrl: 'app/chat/chat.html',
             controller: 'ChatCtrl'
+        })
+
+        .state('profile', {
+            url: '/profile',
+            templateUrl: 'app/userProfile/profile.html',
+            controller: 'ProfileCtrl'
         })
 
         ;
@@ -132,6 +138,18 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             handle: authdUser.github.username,
 
             photo: authdUser.github.cachedUserProfile.avatar_url,
+
+            email: authdUser.github.cachedUserProfile.email,
+
+            followers: authdUser.github.cachedUserProfile.followers,
+
+            following:authdUser.github.cachedUserProfile.following,
+
+            company: authdUser.github.cachedUserProfile.company,
+
+            location:authdUser.github.cachedUserProfile.location,
+
+            url: authdUser.github.cachedUserProfile.html_url,
 
 
         });

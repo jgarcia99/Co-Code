@@ -11,7 +11,7 @@ angular.module('coCode')
             }
         });
 
-        $scope.userId = "user " + Math.round(Math.random() * 1000);
+
         // make up a channel name
         $scope.channel = 'Front-end';
 

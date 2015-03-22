@@ -1,25 +1,28 @@
 <div class="container">
-    <main class="choose-reason" ng-controllerapp="ChooseCtrl as choose">
+    <main class="choose-reason" ng-controller="ChooseCtrl as choose">
         <h2>Hey <span class="handle-name">@{{user.handle}}</span> are you going to the cafe to:</h2>
-        <form name="myReason" ng-submit="choose.userInfo()">
-            <input type="radio" ng-model="user.reason" value="Code"> Code
+        <div ng-init="reason = 'Code'">
+        <form name="myReason" >
+            <input type="radio" ng-model="reason" value="Code"> Code
             <br/>
-            <input type="radio" ng-model="user.reason" value="Talk"> Talk (You forgot your MacBook)
+            <input type="radio" ng-model="reason" value="Talk"> Talk (You forgot your MacBook)
             <br/>
+            </div>
 
+            <div data-ng-init="tech = 'Front-end'"></div>
             <h2>I like to talk/code about:</h2>
 
-            <input type="radio" ng-model="user.tech" value="Front-end">Front-end
+            <input type="radio" ng-model="tech" value="Front-end">Front-end
             <br>
-            <input type="radio" ng-model="user.tech" value="Back-end">Back-end
+            <input type="radio" ng-model="tech" value="Back-end">Back-end
             <br/>
-            <input type="radio" ng-model="user.tech" value="Mobile">Mobile
+            <input type="radio" ng-model="tech" value="Mobile">Mobile
             <br/>
-            <input type="radio" ng-model="user.tech" value="Web Design">Web Design
+            <input type="radio" ng-model="tech" value="Web Design">Web Design
             <br/>
 
-            <h4>So @{{user.handle}} is going to the cafe to {{user.reason}} about {{user.tech}} cool.</h4>
-            <button>Next</button>
+            <h4>So @{{user.handle}} is going to the cafe to {{reason}} about {{tech}} cool.</h4>
+            <button ng-submit="choose.userInfo()">Next</button>
         </form>
 
 

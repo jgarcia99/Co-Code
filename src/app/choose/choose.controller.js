@@ -2,8 +2,8 @@
 
 angular.module('coCode')
     .controller('ChooseCtrl', function($state, $firebaseObject,$scope, $firebaseArray, $stateParams, Auth) {
-      var base = new Firebase('https://co-code.firebaseio.com');
-      var userInfo = new Firebase('https://co-code.firebaseio.com/users/userchoice');
+      var base = new Firebase('https://co-code.firebaseio.com/');
+      var userInfo = new Firebase('https://co-code.firebaseio.com/users/userchoice/');
 
 
             Auth.onAuth(function(user) {
@@ -19,7 +19,7 @@ angular.module('coCode')
         $scope.obj = $firebaseArray(userInfo);
         console.log($scope.obj)
 
-        $scope.userArray = {};
+        $scope.userInfo = {};
 
         $scope.userInfo = {
           reason: "Talk",

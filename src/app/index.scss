@@ -98,5 +98,23 @@ button.submit {
   @include font;
 }
 
+.main-profile {
+
+  h2 {
+    margin-bottom: 3em;
+  }
+  p {
+    @include font;
+    color: black;
+  }
+
+  img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-left: 20em;
+  }
+}
+
 // injector
 // endinjector
