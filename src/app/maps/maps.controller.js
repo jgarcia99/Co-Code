@@ -14,6 +14,7 @@ angular.module('coCode')
             id: 1,
             latitude: 28.593178,
             longitude: -81.361418,
+            icon: '/assets/images/co-code-logo_720.png',
             options: {
               labelContent: 'hello'
             }

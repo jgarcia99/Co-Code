@@ -11,9 +11,8 @@ angular.module('coCode')
             }
         });
 
-
-        // make up a channel name
-        $scope.channel = 'Front-end';
+                // make up a channel name
+         $scope.subscriptions = { FrontEnd : true, Backend : false };
 
         // pre-populate any existing messages (just an AngularJS scope object)
         $scope.messages = ['Welcome to ' + $scope.channel];

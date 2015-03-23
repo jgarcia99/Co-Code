@@ -1,11 +1,11 @@
 <div class="container main-profile" ng-controller="ProfileCtrl">
   <h2 class="text-center">Profile</h2>
-  <div class="user-photo col-md-6">
+  <div class="user-photo col-md-3 col-md-offset-3">
 <img ng-src="{{user.photo}}">
 </div>
 
-<div class="user-info col-md-6">
-  <p>Username:{{user.handle}}</p>
+<div class="user-info col-md-3 col-md-offset-3">
+  <p>Username: {{user.handle}}</p>
     <p>Name: {{user.name}}</p>
     <p>Followers: {{user.followers}}</p>
     <p>Following: {{user.following}}</p>
