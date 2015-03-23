@@ -2,7 +2,7 @@
     <main class="choose-reason" ng-controller="ChooseCtrl as choose">
         <h2>Hey <span class="handle-name">@{{user.handle}}</span> are you going to the cafe to:</h2>
         <div ng-init="reason = 'Code'">
-        <form name="myReason" >
+        <form name="myReason"  ng-submit="choose.userInfo()" >
             <input type="radio" ng-model="reason" value="Code"> Code
             <br/>
             <input type="radio" ng-model="reason" value="Talk"> Talk (You forgot your MacBook)
@@ -22,7 +22,7 @@
             <br/>
 
             <h4>So @{{user.handle}} is going to the cafe to {{reason}} about {{tech}} cool.</h4>
-            <button ng-submit="choose.userInfo()">Next</button>
+            <button>Next</button>
         </form>
 
 

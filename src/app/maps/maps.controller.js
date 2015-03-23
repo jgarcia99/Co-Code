@@ -15,41 +15,47 @@ angular.module('coCode')
             latitude: 28.593178,
             longitude: -81.361418,
             icon: '/assets/images/co-code-logo_720.png',
-            options: {
-              labelContent: 'hello'
-            }
+            title: 'Austins Coffee Shop',
+            showWindow: true,
+
+            'Content': 'Austins Coffee Shop'
+
 
         }, {
             id: 2,
             latitude: 28.568422,
             longitude: -81.346529,
-            options: {
-              labelContent: 'hello'
-            }
+            showWindow: true,
+            title: 'Stardust video & coffee',
+            'Content': 'Stardust video & coffee'
+
 
         }, {
             id: 3,
             latitude: 28.571854,
             longitude: -81.389863,
-            options: {
-              labelContent: 'hello'
-            }
+            showWindow: true,
+            title: 'Downtown Credo',
+            'Content': 'Downtown Credo'
+
 
         }, {
             id: 4,
             latitude: 28.549242,
             longitude: -81.352306,
-            options: {
-              labelContent: 'hello'
-            }
+            showWindow: true,
+            title: 'Drunken Monkey Coffee Shop',
+            'Content': 'Drunken Monkey Coffee Shop'
+
         }, {
 
             id: 5,
             latitude: 28.555688,
             longitude: -81.207649,
-            options: {
-              labelContent: 'hello'
-            }
+            title: 'Vespr Craft Coffee & Allures',
+             showWindow: true,
+            'Content': 'Vespr Craft Coffee & Allures'
+
 
         }];
 
