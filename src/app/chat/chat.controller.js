@@ -7,12 +7,13 @@ angular.module('coCode')
                 console.log('null')
             } else {
                 console.log(user)
-
             }
         });
 
+
+          $scope.userId = "User " + Math.round(Math.random() * 1000);
                 // make up a channel name
-         $scope.subscriptions = { FrontEnd : true, Backend : false };
+         $scope.channel = 'Front-End';
 
         // pre-populate any existing messages (just an AngularJS scope object)
         $scope.messages = ['Welcome to ' + $scope.channel];
@@ -29,6 +30,8 @@ angular.module('coCode')
         PubNub.ngSubscribe({
             channel: $scope.channel
         });
+
+        $scope.newMessage = '';
         // Create a publish() function in the scope
         $scope.publish = function() {
             PubNub.ngPublish({

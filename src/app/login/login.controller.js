@@ -7,7 +7,7 @@ angular.module('coCode')
     var userInfo = new Firebase('https://co-code.firebaseio.com/users');
 
     this.obj = $firebaseArray(userInfo);
-
+    this.logOut= Auth.logout;
 
     this.userArray = {};
 

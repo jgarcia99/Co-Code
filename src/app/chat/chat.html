@@ -1,8 +1,8 @@
-<div class="container" ng-controller="ChatCtrl">
+<div class="container">
   <h2 >Co-Code Orlando Chat</h2>
   <h4>Online Users</h4>
 <ul>
-  <li ng-repeat="user in users">{{user}}</li>
+  <li><a ui-sref="profile">{{user.handle}}</a></li>
 </ul>
 
 

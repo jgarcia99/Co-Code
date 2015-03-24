@@ -3,7 +3,7 @@
 angular.module('coCode')
     .controller('ChooseCtrl', function($state, $firebaseObject,$scope, $firebaseArray, $stateParams, Auth) {
       var base = new Firebase('https://co-code.firebaseio.com/');
-      var userInfo = new Firebase('https://co-code.firebaseio.com/users/userchoice/');
+      var userInfo = new Firebase('https://co-code.firebaseio.com/users/userchoice/'+base.getAuth().uid);
 
 
             Auth.onAuth(function(user) {
@@ -26,12 +26,12 @@ angular.module('coCode')
           tech: "Back-end"
         };
 
-        $scope.addUserInfo = function(userInfo) {
-          $scope.obj.$add(userInfo);
-          return userInfo = {
-            reason: "user.reason",
-            tech: "user.tech"
-          }
+        $scope.addUserInfo = function() {
+          userInfo.update({
+            reason: $scope.reason,
+            tech: $scope.tech
+          })
+          $state.go('map');
         };
 
 

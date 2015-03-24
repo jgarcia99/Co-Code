@@ -15,9 +15,12 @@ angular.module('coCode')
             latitude: 28.593178,
             longitude: -81.361418,
             icon: '/assets/images/co-code-logo_720.png',
-            title: 'Austins Coffee Shop',
+            title: 'Austins Coffee Shop ',
             showWindow: true,
-
+            styles: [{
+              "url":'/assets/images/co-code-logo_720.png',
+            }],
+            'description': '<a href="cof.com">click room</a>',
             'Content': 'Austins Coffee Shop'
 
 
