@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase', 'uiGmapgoogle-maps', 'pubnub.angular.service'])
+angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase', 'uiGmapgoogle-maps', 'pubnub.angular.service','ngResource'])
     .config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
         uiGmapGoogleMapApiProvider.configure({
             key: 'AIzaSyBzWNQv7IOgloZ8Zq9vbifewV9SZtY2Xa8',
@@ -40,6 +40,12 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             url: '/profile',
             templateUrl: 'app/userProfile/profile.html',
             controller: 'ProfileCtrl'
+        })
+
+        .state('posts', {
+            url: '/posts',
+            templateUrl: 'app/posts/posts.html',
+            controller: 'PostsCtrl'
         })
 
         ;
