@@ -20,7 +20,7 @@ angular.module('coCode')
             styles: [{
               "url":'/assets/images/co-code-logo_720.png',
             }],
-            'description': '<a href="cof.com">click room</a>',
+            description: '<a href="cof.com">click room</a>',
             'Content': 'Austins Coffee Shop'
 
 

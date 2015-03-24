@@ -11,7 +11,7 @@ vespyr 28.555688,-81.207649 -->
 
         <ui-gmap-markers models="coffeeMarkers" coords="'self'" icon="icon" options="'options'" click="'onClicked'">
           <ui-gmap-windows show="show" options="'options'">
-            <p ng-non-bindable>{{title}}</p>
+            <p href="clickhere" ng-non-bindable>{{title}} + {{description}}</p>
           </ui-gmap-windows>
         </ui-gmap-markers>
 
@@ -21,5 +21,5 @@ vespyr 28.555688,-81.207649 -->
 
     </ui-gmap-google-map>
 
-    <h3>You have chosen {{coffeeMarkers.content}}</h3>
+
 </div>

@@ -1,10 +1,27 @@
 angular.module('coCode')
-  .controller('PostsCtrl', function ($scope) {
-    $scope.posts = [];
-    $scope.post = {url: 'http://', title: ''};
+    .controller('PostsCtrl', function($scope, Post) {
+        $scope.posts = Post.all;
 
-    $scope.submitPost = function () {
-      $scope.posts.push($scope.post);
-      $scope.post = {url: 'http://', title: ''};
-    };
-  });
+        $scope.post = {
+            url: 'http://',
+            'title': ''
+        };
+
+        $scope.submitPost = function() {
+            Post.create($scope.post).then(function() {
+
+                $scope.post = {
+                    url: 'http://',
+                    'title': ''
+                };
+            });
+        };
+
+
+
+
+        $scope.deletePost = function(post) {
+            Post.delete(post);
+        };
+
+    });
