@@ -1,9 +1,7 @@
 .angular-google-map-container {
     height: 300px;
 
-    filter: alpha(opacity=40);
-    background: transparent no-repeat 0 0;
-    opacity: 0.6;
+
 
 
 
@@ -77,6 +75,59 @@ button.submit {
     h2 {
         color: #F8717E;
     }
+
+    span {
+      color: #cc1075;
+    }
+
+    button {
+      background-color: $button;
+      border-radius: 30%;
+      @include font;
+    }
+
+    h4 {
+      font-family: 'Press Start 2P', cursive;;
+      color: #cc1075;
+    }
 }
+
+.ending-foot {
+  @include font;
+}
+
+.main-profile {
+
+  h2 {
+    margin-bottom: 3em;
+  }
+  p {
+    @include font;
+    color: black;
+  }
+
+  img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+
+  }
+}
+
+.well {
+  background-color: #C6706D;
+  opacity: .9;
+}
+
+.not-active {
+   color: black;
+   }
+
+.namedown {
+  button {
+    position: relative;
+  }
+}
+
 // injector
 // endinjector

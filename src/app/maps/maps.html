@@ -3,14 +3,17 @@ stardust 28.568422,-81.346529
 downtown credo 28.571854,-81.389863
 monkey 28.549242,-81.352306
 vespyr 28.555688,-81.207649 -->
-<div class="container">
-  <h2>Top 5 coffee shops in Orlando</h2>
+<div class="container" ng-controller="MapsCtrl">
+    <h2 class="text-center">Choose a coffee shop then enter chat room</h2>
 
     <ui-gmap-google-map center="map.center" zoom="map.zoom">
 
 
-
-      <ui-gmap-marker  coords="marker" data-ng-repeat="marker in markerList" ></ui-gmap-marker>
+        <ui-gmap-markers models="coffeeMarkers" coords="'self'" icon="icon" options="'options'" click="'onClicked'">
+          <ui-gmap-windows show="show" options="'options'">
+            <p href="clickhere" ng-non-bindable>{{title}} {{description}}</p>
+          </ui-gmap-windows>
+        </ui-gmap-markers>
 
 
 
@@ -18,5 +21,5 @@ vespyr 28.555688,-81.207649 -->
 
     </ui-gmap-google-map>
 
-</div>
 
+</div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase', 'uiGmapgoogle-maps'])
+angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'firebase', 'uiGmapgoogle-maps', 'pubnub.angular.service','ngResource'])
     .config(function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
         uiGmapGoogleMapApiProvider.configure({
             key: 'AIzaSyBzWNQv7IOgloZ8Zq9vbifewV9SZtY2Xa8',
@@ -18,22 +18,43 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             })
 
         .state('choose', {
-            url: '/choose',
+            url: '/choose/',
             templateUrl: 'app/choose/choose.html',
-            controller: 'ChooseCtrl'
+            controller: 'ChooseCtrl',
+            controllerAs: 'choose'
         })
 
         .state('map', {
             url: '/map',
             templateUrl: 'app/maps/maps.html',
             controller: 'MapsCtrl'
-        });
+        })
+
+        .state('chat', {
+            url: '/chat',
+            templateUrl: 'app/chat/chat.html',
+            controller: 'ChatCtrl'
+        })
+
+        .state('profile', {
+            url: '/profile',
+            templateUrl: 'app/userProfile/profile.html',
+            controller: 'ProfileCtrl'
+        })
+
+        .state('posts', {
+            url: '/posts',
+            templateUrl: 'app/posts/posts.html',
+            controller: 'PostsCtrl'
+        })
+
+        ;
         $urlRouterProvider.otherwise('/login');
     })
 
 .factory('Auth', function($firebaseObject, $state) {
-    var auth = new Firebase('https://co-code.firebaseio.com');
-    var currentUser = {};
+    var auth = new Firebase('https://co-code.firebaseio.com/users');
+
 
     return {
         /**
@@ -91,21 +112,61 @@ angular.module('coCode', ['ngAnimate', 'ngTouch', 'ngSanitize', 'restangular', '
             if (auth.getAuth()) {
                 return true;
             }
-        },
-        /**
-         *Get the current user.
-         */
-        getUser: function() {
-            return currentUser;
         }
-    };
+    }; // end of return block
+    /**
+     *Get the current user.
+     */
+    //     getUser: function() {
+    //         return currentUser;
+    //     }
+    // };
 
     function updateUser(authdUser) {
         console.log(authdUser)
         if (authdUser === null) {
             return null;
-        }
-        console.log("This will break if you login with anything other than github or twitter")
+        };
 
+
+        var user = auth.child(authdUser.github.id);
+
+        var ghCach = authdUser.github.cachedUserProfile;
+
+        user.update({
+
+            uid: authdUser.github.id,
+
+            gh: authdUser.github,
+
+            name: authdUser.github.displayName,
+
+            handle: authdUser.github.username,
+
+            photo: authdUser.github.cachedUserProfile.avatar_url,
+
+            email: authdUser.github.cachedUserProfile.email,
+
+            followers: authdUser.github.cachedUserProfile.followers,
+
+            following:authdUser.github.cachedUserProfile.following,
+
+            company: authdUser.github.cachedUserProfile.company,
+
+            location:authdUser.github.cachedUserProfile.location,
+
+            url: authdUser.github.cachedUserProfile.html_url,
+
+
+        });
+
+        user = $firebaseObject(
+
+            auth.child(authdUser.github.id)
+        );
+
+        return user;
     }
-});
+})
+
+;

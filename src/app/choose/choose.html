@@ -1,24 +1,33 @@
 <div class="container">
-    <main class="choose-reason" ng-controller="LoginCtrl as login">
-        <h2>Hey {{auth.github.displayName}} are you going to the cafe to:</h2>
-        <form action="">
-            <input type="radio" name="reason" value="Code (you got your Mac)">Code (you got your Mac)
+    <main class="choose-reason" ng-controller="ChooseCtrl as choose">
+        <h2>Hey <span class="handle-name">@{{user.handle}}</span> are you going to the cafe to:</h2>
+        <div ng-init="reason = 'Code'">
+        <form name="myReason">
+            <input type="radio" ng-model="reason" value="Code"> Code
+            <br/>
+            <input type="radio" ng-model="reason" value="Talk"> Talk (You forgot your MacBook)
+            <br/>
+            </div>
+
+            <div data-ng-init="tech = 'Front-end'"></div>
+            <h2>I like to talk/code about:</h2>
+
+            <input type="radio" ng-model="tech" value="Front-end">Front-end
             <br>
-            <input type="radio" name="reason" value="Talk (left the Mac home)">Talk (left the Mac home)<br>
-            <input type="radio" name="reason" value="Both">Both
+            <input type="radio" ng-model="tech" value="Back-end">Back-end
+            <br/>
+            <input type="radio" ng-model="tech" value="Mobile">Mobile
+            <br/>
+            <input type="radio" ng-model="tech" value="Web Design">Web Design
+            <br/>
+
+            <h4>So @{{user.handle}} your going to the cafe to {{reason}}  {{tech}} cool.</h4>
+            <button ng-click="addUserInfo()">Next</button>
         </form>
+
+
+
 
 
     </main>
-
-    <section class="choose-title">
-      <h2>I like to talk/code about:</h2>
-        <form action="">
-            <input type="radio" name="job" value="Font-end">Front-end
-            <br>
-            <input type="radio" name="job" value="Back-end">Back-end<br>
-            <input type="radio" name="job" value="Mobile">Mobile<br>
-             <input type="radio" name="job" value="Web Design">Web Design<br>
-        </form>
-    </section>
 </div>
