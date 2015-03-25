@@ -63,7 +63,7 @@ angular.module('coCode')
         // Populate message history (optional)
         PubNub.ngHistory({
             channel: $scope.channel,
-            count: 500
+            count: 10
         });
     });
 
