@@ -1,16 +1,16 @@
 <div class="container">
   <h2 >Co-Code Orlando Chat</h2>
   <h4>Online Users</h4>
-<ul>
+<ul class="list-unstyled">
   <li><a ui-sref="profile">{{user.handle}}</a></li>
 </ul>
 
 
 
 <div class="well">
-  <ul>
-    <li ng-repeat="message in messages">
-      {{message}}
+  <ul class="list-unstyled">
+    <li ng-repeat="message in messages track by $index"> <br>
+     <img ng-src="{{user.photo}}" height="50px" width="50px" class="img-circle">  <a ui-sref="profile"><strong>{{user.handle}}</strong></a>  {{message | date : HH:mm:ss }}
     </li>
   </ul>
 </div>

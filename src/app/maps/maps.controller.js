@@ -20,7 +20,7 @@ angular.module('coCode')
             styles: [{
               "url":'/assets/images/co-code-logo_720.png',
             }],
-            description: '<a href="cof.com">click room</a>',
+            description: '<a href="/#/chat">chat room</a>',
             'Content': 'Austins Coffee Shop'
 
 
@@ -30,8 +30,8 @@ angular.module('coCode')
             longitude: -81.346529,
             showWindow: true,
             title: 'Stardust video & coffee',
-            'Content': 'Stardust video & coffee'
-
+            'Content': 'Stardust video & coffee',
+            description: '<a href="/#/chat">chat room</a>',
 
         }, {
             id: 3,
@@ -39,8 +39,8 @@ angular.module('coCode')
             longitude: -81.389863,
             showWindow: true,
             title: 'Downtown Credo',
-            'Content': 'Downtown Credo'
-
+            'Content': 'Downtown Credo',
+            description: '<a href="/#/chat">chat room</a>',
 
         }, {
             id: 4,
@@ -48,8 +48,8 @@ angular.module('coCode')
             longitude: -81.352306,
             showWindow: true,
             title: 'Drunken Monkey Coffee Shop',
-            'Content': 'Drunken Monkey Coffee Shop'
-
+            'Content': 'Drunken Monkey Coffee Shop',
+            description: '<a href="/#/chat">chat room</a>',
         }, {
 
             id: 5,
@@ -57,8 +57,8 @@ angular.module('coCode')
             longitude: -81.207649,
             title: 'Vespr Craft Coffee & Allures',
              showWindow: true,
-            'Content': 'Vespr Craft Coffee & Allures'
-
+            'Content': 'Vespr Craft Coffee & Allures',
+            description: '<a href="/#/chat">chat room</a>',
 
         }];
 

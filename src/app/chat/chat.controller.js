@@ -1,17 +1,20 @@
 angular.module('coCode')
     .controller('ChatCtrl', function($rootScope,$firebaseObject, $firebaseArray,$location,Auth,$scope, PubNub) {
         // make up a user id (you probably already have $scope)
-          Auth.onAuth(function(user) {
+            Auth.onAuth(function(user) {
             $scope.user = user;
             if (user === null) {
                 console.log('null')
             } else {
                 console.log(user)
             }
+
+
         });
 
+            $scope.userId = Auth.user;
 
-          $scope.userId = "User " + Math.round(Math.random() * 1000);
+
                 // make up a channel name
          $scope.channel = 'Front-End';
 
@@ -36,7 +39,7 @@ angular.module('coCode')
         $scope.publish = function() {
             PubNub.ngPublish({
                 channel: $scope.channel,
-                message: "[" + $scope.userId + "] " + $scope.newMessage
+                message:  $scope.newMessage
             });
             $scope.newMessage = '';
         };

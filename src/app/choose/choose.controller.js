@@ -26,7 +26,7 @@ angular.module('coCode')
           tech: "Back-end"
         };
 
-        $scope.addUserInfo = function() {
+       $scope.addUserInfo = function() {
           userInfo.update({
             reason: $scope.reason,
             tech: $scope.tech
